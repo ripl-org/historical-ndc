@@ -1,0 +1,23 @@
+{
+  "@context": "https://raw.githubusercontent.com/codemeta/codemeta/master/codemeta.jsonld",
+  "@type": "Code",
+  "author": [
+    {
+      "@id": "0000-0002-0764-4090",
+      "@type": "Person",
+      "email": "mhowison@ripl.org",
+      "name": "Mark Howison",
+      "affiliation": "Research Improving People's Lives"
+    }
+  ],
+  "identifier": "",
+  "codeRepository": "https://github.com/ripl-org/historical-ndc",
+  "datePublished": "2018-12-12",
+  "dateModified": "2018-12-12",
+  "dateCreated": "2018-12-12",
+  "description": "A data-processing framework for downloading and collating historical archives of the National Drug Code Directory",
+  "keywords": "Python, data processing, medical informatics, pharmacy claims, opioids",
+  "license": "BSD-like",
+  "title": "historical-ndc",
+  "version": "20181212"
+}
