@@ -1,0 +1,63 @@
+         ndc       ingredient  amount unit
+0  000020014  FLURANDRENOLIDE     4.0  MCG
+1  000020018      CAPREOMYCIN     1.0   GM
+2  000020034       CEPHALEXIN   500.0   MG
+3  000020055        CINOXACIN   250.0   MG
+4  000020056        CINOXACIN   500.0   MG
+ndc            object
+ingredient     object
+amount        float64
+unit           object
+dtype: object
+unique NDCs: 198371
+total ingredient entries: 417272
+after dropping entries with missing or non-digit NDC: 417245
+after dropping entries with missing ingredient: 417245
+after dropping entries with missing amount: 410864
+most common units:
+MG         202830
+[HP_X]      75647
+G           54048
+ML          13519
+[HP_C]      12587
+%WW          8652
+GM           7985
+%WV          4729
+MCG          4403
+UNT          3786
+UG           3430
+%VV          3328
+NS           2208
+[PNU]        1933
+[IU]         1383
+[USP'U]      1260
+X            1251
+1             973
+[BAU]         926
+L             853
+Name: unit, dtype: int64
+ingredient entries without weight: 137358
+number of opioid drugs:
+ 0    191092
+ 1      4175
+-1       184
+Name: opioid, dtype: int64
+number of recovery drugs:
+0    195037
+1       414
+Name: recovery, dtype: int64
+drugs classified as both opioid and recovery:
+              ndc  opioid  recovery
+44432   165900897       1         1
+140268  607930430       1         1
+140269  607930431       1         1
+140270  607930433       1         1
+140271  607930434       1         1
+140272  607930435       1         1
+140273  607930437       1         1
+140280  607930531       1         1
+140281  607930532       1         1
+140282  607930533       1         1
+140283  607930535       1         1
+140284  607930536       1         1
+140285  607930537       1         1

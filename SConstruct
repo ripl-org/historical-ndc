@@ -61,8 +61,8 @@ env.Command("output/ndc-ingredients.csv",
 
 ### Opioid classification based on ingredient amounts ###
 
-env.Command("output/ndc-opioids.csv",
+env.Command(["output/ndc-opioids.csv", "output/ndc-opioids.log"],
             ["lib/opioids.py", "output/ndc-ingredients.csv"],
-            "python $SOURCES $TARGET")
+            "python $SOURCES ${TARGETS[0]} > ${TARGETS[1]}")
 
 # vim: syntax=python expandtab sw=4 ts=4
