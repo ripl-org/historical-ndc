@@ -47,8 +47,8 @@ def Unzip(target, source, env):
     md5verify(target, md5)
 
 def CombineDrugs(target, source, env):
-    df = pd.concat([pd.read_csv(f.path, dtype={"ndc": str}) for f in source])
-    df.groupby("ndc").max().to_csv(target[0].path, float_format="%g")
+    df = pd.concat([pd.read_csv(f.path, dtype={"ndc": str}) for f in source], ignore_index=True)
+    df.drop_duplicates("ndc", keep="last").to_csv(target[0].path, columns=["ndc", "name", "proprietary_name", "schedule"], index=False, float_format="%g")
 
 def CombineIngredients(target, source, env):
     df = pd.concat([pd.read_csv(f.path, dtype=str) for f in source])

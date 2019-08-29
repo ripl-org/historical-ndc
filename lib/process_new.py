@@ -50,14 +50,14 @@ def Process(target, source, env):
         header = open(path, encoding="latin-1").readline().split("\t")
 
         if len(header) == 16:
-            usecols = [0, 4, 12, 13, 14]
-            names = ["ndc", "name", "ingredient", "amount", "unit"]
+            usecols = [0, 2, 4, 12, 13, 14]
+            names = ["ndc", "proprietary_name", "name", "ingredient", "amount", "unit"]
         elif len(header) == 17:
-            usecols = [0, 4, 12, 13, 14, 16]
-            names = ["ndc", "name", "ingredient", "amount", "unit", "schedule"]
+            usecols = [0, 2, 4, 12, 13, 14, 16]
+            names = ["ndc", "proprietary_name", "name", "ingredient", "amount", "unit", "schedule"]
         else:
-            usecols = [1, 5, 13, 14, 15, 17]
-            names = ["ndc", "name", "ingredient", "amount", "unit", "schedule"]
+            usecols = [1, 3, 5, 13, 14, 15, 17]
+            names = ["ndc", "proprietary_name", "name", "ingredient", "amount", "unit", "schedule"]
 
         if header[0] == "PRODUCTNDC" or header[0] == "PRODUCTID":
             skiprows = 1
@@ -69,6 +69,7 @@ def Process(target, source, env):
 
         df["ndc"] = df["ndc"].apply(reformat_ndc)
         df["name"] = df["name"].str.upper()
+        df["proprietary_name"] = df["proprietary_name"].str.upper()
 
         if "schedule" in df.columns:
             df["schedule"] = df["schedule"].map({"": "", "CI": "1", "CII": "2", "CIII": "3", "CIV": "4", "CV": "5"})
@@ -80,7 +81,7 @@ def Process(target, source, env):
     products = pd.concat(products, ignore_index=True).drop_duplicates()
 
     # Drugs file
-    products.to_csv(target[0].path, columns=["ndc", "name", "schedule"], index=False)
+    products.to_csv(target[0].path, columns=["ndc", "name", "proprietary_name", "schedule"], index=False)
 
     # Ingredients file
     split_ingredients(products).to_csv(target[1].path, index=False)

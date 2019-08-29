@@ -1,0 +1,98 @@
+after dropping entries with missing or non-digit NDC: 417245
+after dropping entries with missing ingredient: 417245
+child psychiatric ingredients without any NDCs: Series([], Name: ingredient, dtype: object)
+unique NDCs matched: 15030
+Counts of NDC codes per child psychiatric ingredient:
+                ingredient   ndc  isdigits
+category                                  
+ADHD                  2311  2311      2311
+ANTIANXIETY           4677  4677      4677
+ANTIDEPRESSANT        5270  5270      5270
+ANTIPSYCHOTIC         2642  2642      2642
+MOODSTABILIZER        1620  1620      1620
+SLEEP                 2716  2716      2716
+Summary of 10 most frequently occuring drug names by category:
+ADHD
+proprietary_name
+CLONIDINE HYDROCHLORIDE                                                                                               355
+DEXTROAMPHETAMINE SACCHARATE, AMPHETAMINE ASPARTATE, DEXTROAMPHETAMINE SULFATE AND AMPHETAMINE SULFATE                199
+METHYLPHENIDATE HYDROCHLORIDE                                                                                         166
+DEXTROAMPHETAMINE SACCHARATE, AMPHETAMINE ASPARTATE MONOHYDRATE, DEXTROAMPHETAMINE SULFATE AND AMPHETAMINE SULFATE    149
+ADDERALL                                                                                                              129
+DEXTROAMPHETAMINE SACCHARATE, AMPHETAMINE ASPARTATE, DEXTROAMPHETAMINE SULFATE, AND AMPHETAMINE SULFATE                96
+DEXMETHYLPHENIDATE HYDROCHLORIDE                                                                                       75
+DEXTROAMPHETAMINE SULFATE                                                                                              61
+GUANFACINE                                                                                                             49
+ATOMOXETINE                                                                                                            48
+dtype: int64
+
+ANTIDEPRESSANT
+proprietary_name
+BUPROPION HYDROCHLORIDE        371
+VENLAFAXINE HYDROCHLORIDE      311
+AMITRIPTYLINE HYDROCHLORIDE    261
+SERTRALINE HYDROCHLORIDE       251
+FLUOXETINE                     243
+MIRTAZAPINE                    221
+CITALOPRAM                     197
+TRAZODONE HYDROCHLORIDE        189
+NORTRIPTYLINE HYDROCHLORIDE    157
+DULOXETINE                     152
+dtype: int64
+
+ANTIPSYCHOTIC
+proprietary_name
+RISPERIDONE                   445
+QUETIAPINE FUMARATE           364
+OLANZAPINE                    336
+ARIPIPRAZOLE                  197
+HALOPERIDOL                   112
+SEROQUEL                       73
+QUETIAPINE                     68
+FLUPHENAZINE HYDROCHLORIDE     60
+ABILIFY                        51
+CLOZAPINE                      47
+dtype: int64
+
+MOODSTABILIZER
+proprietary_name
+LAMOTRIGINE                     314
+DIVALPROEX SODIUM               266
+CARBAMAZEPINE                   131
+LITHIUM CARBONATE               119
+OXCARBAZEPINE                    99
+LAMICTAL                         49
+VALPROIC ACID                    37
+DEPAKOTE                         34
+LAMOTRIGINE EXTENDED RELEASE     12
+TEGRETOL                         11
+dtype: int64
+
+ANTIANXIETY
+proprietary_name
+ALPRAZOLAM                       436
+LORAZEPAM                        312
+CLONAZEPAM                       242
+ZOLPIDEM TARTRATE                208
+DIAZEPAM                         191
+BUSPIRONE HYDROCHLORIDE          175
+HYDROXYZINE PAMOATE              150
+DIPHENHYDRAMINE HYDROCHLORIDE    122
+ALLERGY RELIEF                   109
+SLEEP AID                         87
+dtype: int64
+
+SLEEP
+proprietary_name
+ZOLPIDEM TARTRATE                208
+TRAZODONE HYDROCHLORIDE          189
+ESZOPICLONE                      122
+DIPHENHYDRAMINE HYDROCHLORIDE    122
+ALLERGY RELIEF                   109
+SLEEP AID                         87
+PAIN RELIEF PM                    69
+NIGHTTIME SLEEP AID               59
+ZALEPLON                          50
+ALLERGY                           48
+dtype: int64
+

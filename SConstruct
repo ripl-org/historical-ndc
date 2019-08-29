@@ -65,10 +65,13 @@ env.Command(["output/ndc-opioids.csv", "output/ndc-opioids.log"],
             ["lib/opioids.py", "output/ndc-ingredients.csv"],
             "python $SOURCES ${TARGETS[0]} > ${TARGETS[1]}")
 
-### Children Psychiatric Med Ingredients 
-env.Command(["output/ndc-psychiatric-children.csv", "output/ndc-psychiatric-children.log"],
-            ["lib/ndc-psychiatric-children.py", "scratch/child-psychiatric-ingredients.csv", "output/ndc-ingredients.csv", "output/ndc-drugs.csv"], 
-            "python $SOURCES ${TARGETS[0]} > ${TARGETS[1]}")
+### Child psychiatric classification based on ingredient list ###
 
+env.Command(["output/ndc-child-psychiatric.csv", "output/ndc-child-psychiatric.log"],
+            ["lib/child-psychiatric.py",
+             "input/child-psychiatric-ingredients.csv",
+             "output/ndc-ingredients.csv",
+             "output/ndc-drugs.csv"], 
+            "python $SOURCES ${TARGETS[0]} > ${TARGETS[1]}")
 
 # vim: syntax=python expandtab sw=4 ts=4
