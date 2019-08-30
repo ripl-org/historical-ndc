@@ -36,5 +36,5 @@ for category in cp.category.unique():
     cp.loc[cp.category == category, category] = 1
 
 # Save
-cp.drop(columns=["category", "ingredient"]).to_csv(outfile, index=False)
+cp.drop(columns=["isdigits", "category", "ingredient"]).to_csv(outfile, index=False)
 
