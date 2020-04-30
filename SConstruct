@@ -59,6 +59,13 @@ env.Command("output/ndc-ingredients.csv",
             ["scratch/ndc-ingredients-{}.csv".format(year) for year in years],
             CombineIngredients)
 
+### Examine potential re-use of NDCs ###
+
+env.Command("output/ndc-reuse.csv",
+            ["lib/reuse.py"] + 
+            ["scratch/ndc-drugs-{}.csv".format(year) for year in years],
+            "python $SOURCES $TARGET")
+
 ### Opioid classification based on ingredient amounts ###
 
 env.Command(["output/ndc-opioids.csv", "output/ndc-opioids.log"],
